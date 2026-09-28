@@ -1,0 +1,19 @@
+/* ======================= THEME (edit per shop) =======================
+   Colours, fonts and corner radius for every page (home, privacy, thank-you, export).
+   Fonts are self-hosted in fonts/ (see @font-face at the top of style.css). To use other
+   Google Fonts: download the latin .woff2 files into fonts/ and update the @font-face rules.
+   ===================================================================== */
+:root {
+  --color-bg:        #f6efe4;  /* page background (warm paper) */
+  --color-surface:   #fffaf2;  /* cards */
+  --color-ink:       #2f241d;  /* main text */
+  --color-muted:     #6f6258;  /* secondary text */
+  --color-accent:    #b4623e;  /* buttons, links (clay) */
+  --color-accent-ink:#ffffff;  /* text on accent */
+  --color-accent-2:  #6f7d5c;  /* secondary accent (sage) */
+  --color-deep:      #3a2b22;  /* dark sections */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 14px;
+}
