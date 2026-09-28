@@ -1,0 +1,15 @@
+/* Evers Art Shop — warm clay / coastal Long Beach pottery */
+:root {
+  --color-bg:        #f4ebe0;
+  --color-surface:   #fff9f1;
+  --color-ink:       #2c221c;
+  --color-muted:     #6d5e52;
+  --color-accent:    #c45c38;
+  --color-accent-ink:#ffffff;
+  --color-accent-2:  #5a7a8c;
+  --color-deep:      #3a2a22;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 14px;
+}
