@@ -1,5 +1,5 @@
 /* Exclusive Website Online shop template: small progressive-enhancement script.
-   Without JS: forms post to subscribe.php (thank-you page) and shop buttons are plain Etsy links. */
+   Without JS: forms post to subscribe.php (thank-you page) and shop buttons are plain shop links. */
 (function () {
   'use strict';
 
@@ -154,7 +154,7 @@
     var link = e.target.closest && e.target.closest('a.js-shop');
     if (!link || modal.contains(link)) return;
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (remembered() || dismissedThisVisit) return; // go straight to Etsy
+    if (remembered() || dismissedThisVisit) return; // go straight to the shop
     e.preventDefault();
     openModal(link.href, link);
   });
