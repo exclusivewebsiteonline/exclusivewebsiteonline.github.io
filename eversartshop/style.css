@@ -288,7 +288,7 @@ section[id] { scroll-margin-top: 72px; }
 @media (max-width: 859px) { .hero-content { padding-bottom: 5.5rem; } }
 
 /* ==========================================================================
-   Primary CTA = shop on Etsy. Secondary actions are quiet text links.
+   Primary CTA = shop link. Secondary actions are quiet text links.
    ========================================================================== */
 .btn-shop { gap: .55rem; }
 .btn-arrow { width: 1.1em; height: 1.1em; flex: none; transition: transform .15s ease; }
