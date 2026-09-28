@@ -1,0 +1,15 @@
+/* Crafty Colanah — candy-shop pastel polymer clay */
+:root {
+  --color-bg:        #fff5f7;
+  --color-surface:   #ffffff;
+  --color-ink:       #3a2430;
+  --color-muted:     #7a5a68;
+  --color-accent:    #e85a7a;
+  --color-accent-ink:#ffffff;
+  --color-accent-2:  #6bb3a8;
+  --color-deep:      #4a2438;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 16px;
+}
