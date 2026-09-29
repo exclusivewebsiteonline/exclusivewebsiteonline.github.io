@@ -3,47 +3,240 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Exclusive Website Online</title>
-<meta name="description" content="Exclusive Website Online builds simple, personal websites for Etsy sellers.">
-<meta name="theme-color" content="#f7f3ec">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f2a24'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%23f7f3ec'%3EE%3C/text%3E%3C/svg%3E">
-<style>
-  :root { --bg: #f7f3ec; --ink: #1f2a24; --muted: #5d665f; --line: #ddd5c8; --accent: #9a5b3c; }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; }
-  body {
-    min-height: 100vh; display: flex; flex-direction: column;
-    background: var(--bg); color: var(--ink);
-    font: 400 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 4rem 1.5rem; }
-  .card { max-width: 36rem; }
-  .mark {
-    display: inline-grid; place-items: center; width: 3rem; height: 3rem; border-radius: .8rem;
-    background: var(--ink); color: var(--bg); font: 600 1.5rem/1 Georgia, "Times New Roman", serif; margin-bottom: 1.75rem;
-  }
-  h1 { font: 500 clamp(2rem, 6vw, 2.9rem)/1.12 Georgia, "Times New Roman", serif; letter-spacing: -.01em; margin: 0 0 1rem; }
-  p { margin: 0 0 1rem; color: var(--muted); }
-  .lead { font-size: 1.2rem; color: var(--ink); }
-  hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
-  a { color: var(--accent); text-underline-offset: .2em; }
-  a:hover { color: var(--ink); }
-  footer { padding: 1.5rem; text-align: center; font-size: .875rem; color: var(--muted); }
-</style>
+<meta name="robots" content="noindex">
+<title>Exclusive Website Online · Own your Instagram traffic</title>
+<meta name="description" content="Story-focused personal websites for Etsy sellers on Instagram. Your followers land on a site you own, and an email signup builds a customer list you keep. Free preview first, $100 one time if you keep it.">
+<meta name="theme-color" content="#f6efe4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23b4623e'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%23f6efe4'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/fraunces-var.woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <div class="card">
-    <div class="mark" aria-hidden="true">E</div>
-    <h1>Exclusive Website Online</h1>
-    <p class="lead">Simple, personal websites for Etsy sellers.</p>
-    <p>A home for your shop&rsquo;s story, with a clear path to your Etsy listings and an easy way for visitors to join your email list.</p>
-    <hr>
-    <p>Previews live at their own addresses on this site and are shared directly with each shop owner.</p>
-    <p><a href="juniper-row/">See an example site</a> (a made-up pottery shop, for demonstration).</p>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Exclusive Website Online, home">
+      <span class="brand-mark" aria-hidden="true">E</span>
+      <span class="brand-name">Exclusive Website <em>Online</em></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#why">Why</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#example">Example</a>
+      <a class="btn btn-small" href="mailto:hello@exclusivewebsite.online?subject=Free%20preview%20site&amp;body=Hi!%20I%27d%20like%20a%20free%20preview%20site.%0A%0AMy%20Etsy%20shop%3A%20%0AMy%20Instagram%3A%20">Free preview</a>
+    </nav>
   </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Websites for Etsy sellers on Instagram</p>
+        <h1>Own your Instagram&nbsp;traffic.</h1>
+        <p class="lead">Right now your bio link sends followers straight to Etsy. With your own site, they land on a page that&rsquo;s yours, hear your story, and can join your email list on the way to your shop.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:hello@exclusivewebsite.online?subject=Free%20preview%20site&amp;body=Hi!%20I%27d%20like%20a%20free%20preview%20site.%0A%0AMy%20Etsy%20shop%3A%20%0AMy%20Instagram%3A%20">Get a free preview <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-outline" href="juniper-row/">See an example site</a>
+        </div>
+        <p class="hero-note"><span class="script">Try before you buy</span> &mdash; we build your preview first, free. Keep it for $100, one time.</p>
+      </div>
+      <figure class="hero-figure">
+        <div class="browser">
+          <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><em>juniper-row &middot; example</em></div>
+          <img src="img/ex-desktop.webp" width="1100" height="688" alt="Example site: the top of a sample pottery shop's home page with a Shop now button" fetchpriority="high">
+        </div>
+        <img class="hero-phone" src="img/ex-mobile.webp" width="520" height="1040" alt="The same example site on a phone" loading="lazy">
+        <figcaption>Example site with invented sample content</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--surface" id="why">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Own your traffic</p>
+        <h2>Your followers, your page, your list</h2>
+        <p class="muted">When your Instagram bio links straight to Etsy, those visitors land on Etsy&rsquo;s page, and you don&rsquo;t get their contact details. A site of your own changes that.</p>
+      </div>
+      <div class="compare">
+        <div class="compare-card compare-card--before">
+          <h3>Bio link &rarr; Etsy</h3>
+          <ul>
+            <li>Followers leave Instagram for a page you don&rsquo;t own.</li>
+            <li>Etsy doesn&rsquo;t give you your shoppers&rsquo; email addresses.</li>
+            <li>You don&rsquo;t know who your shoppers are, and have no way to reach them again yourself.</li>
+          </ul>
+        </div>
+        <div class="compare-arrow" aria-hidden="true">&rarr;</div>
+        <div class="compare-card compare-card--after">
+          <h3>Bio link &rarr; your site &rarr; Etsy</h3>
+          <ul>
+            <li>Your Instagram traffic lands on a page you own.</li>
+            <li>An email signup turns visitors into a customer list you keep.</li>
+            <li>Know who your customers are: every signup gives you an email address (and a first name, if they share it) that you keep.</li>
+            <li>You can email them directly, whatever happens with Etsy.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="subhead">What&rsquo;s on your site</h3>
+      <div class="features">
+        <article class="feature">
+          <span class="feature-num" aria-hidden="true">01</span>
+          <h4>Your story</h4>
+          <p>Your photo and your story, written from your Etsy About section and your Instagram.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-num" aria-hidden="true">02</span>
+          <h4>Your product categories</h4>
+          <p>The things you make, shown by category, so visitors see your range at a glance.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-num" aria-hidden="true">03</span>
+          <h4>A &ldquo;Shop on Etsy&rdquo; button with a signup</h4>
+          <p>The main button opens a short email signup offering a discount you choose, with a &ldquo;No thanks, take me to the shop&rdquo; option so nobody is blocked.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-num" aria-hidden="true">04</span>
+          <h4>Know who your customers are</h4>
+          <p>Every signup gives you an email address you keep (plus a first name, if they share it), so you build a customer list of your own. A privacy page is included.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>We build it. You look. Keep it if you love it.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">1</span>
+          <h3>We build your preview</h3>
+          <p>We make a preview of your site first, for free, using your shop and your Instagram.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">2</span>
+          <h3>You take a look</h3>
+          <p>We send it to you. Ask for any changes you&rsquo;d like and we&rsquo;ll make them.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">3</span>
+          <h3>Keep it for $100</h3>
+          <p>If you want to keep it, it&rsquo;s $100 one time, paid by PayPal invoice. Your site lives at <strong>yourshop.exclusivewebsite.online</strong>.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--deep" id="pricing">
+    <div class="container pricing-wrap">
+      <div class="pricing-copy">
+        <p class="eyebrow eyebrow--light">Pricing</p>
+        <h2>One price. No monthly fees.</h2>
+        <p>You see your finished preview before you pay anything. If you&rsquo;d like to keep it, there&rsquo;s one payment and that&rsquo;s it.</p>
+      </div>
+      <div class="price-card">
+        <p class="price-label">Your own site</p>
+        <p class="price"><span class="price-cur">$</span>100 <span class="price-note">one time</span></p>
+        <ul class="checks">
+          <li>Free preview first &mdash; pay only if you keep it</li>
+          <li>Your site at <strong>yourshop.exclusivewebsite.online</strong></li>
+          <li>10 years of hosting from your payment date</li>
+          <li>A forwarding email address at the domain</li>
+          <li>Changes you ask for</li>
+          <li>Paid by PayPal invoice</li>
+        </ul>
+        <a class="btn btn-primary btn-block" href="mailto:hello@exclusivewebsite.online?subject=Free%20preview%20site&amp;body=Hi!%20I%27d%20like%20a%20free%20preview%20site.%0A%0AMy%20Etsy%20shop%3A%20%0AMy%20Instagram%3A%20">Get a free preview</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="example">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Example</p>
+        <h2>See an example site</h2>
+        <p class="muted"><strong>This is an example.</strong> Juniper Row Pottery is a made-up shop: the owner, story and content are invented for demonstration, and the photos are free stock images.</p>
+      </div>
+      <div class="example-grid">
+        <figure class="example-shot">
+          <img src="img/ex-desktop.webp" width="1100" height="688" alt="Example site home page with the owner's shop name, tagline and Shop now button" loading="lazy">
+          <figcaption>The home page: story first, with the shop button up top.</figcaption>
+        </figure>
+        <figure class="example-shot">
+          <img src="img/ex-popup.webp" width="1100" height="688" alt="Example signup popup offering 10% off, with a No thanks, take me to the shop link" loading="lazy">
+          <figcaption>The shop button opens the signup, with a discount the owner chooses and a &ldquo;No thanks&rdquo; option.</figcaption>
+        </figure>
+      </div>
+      <p class="center"><a class="btn btn-outline" href="juniper-row/">Open the example site <span aria-hidden="true">&rarr;</span></a></p>
+    </div>
+  </section>
+
+  <section class="section section--surface" id="faq">
+    <div class="container narrow">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2>FAQ</h2>
+      </div>
+      <details class="faq">
+        <summary>Do I need to do anything technical?</summary>
+        <p>No. We build and host the site for you.</p>
+      </details>
+      <details class="faq">
+        <summary>Can I ask for changes?</summary>
+        <p>Yes. Tell us what you&rsquo;d like changed and we&rsquo;ll make the changes.</p>
+      </details>
+      <details class="faq">
+        <summary>What does the preview cost?</summary>
+        <p>Nothing. We build your preview for free and send it to you. You pay $100 one time only if you decide to keep it.</p>
+      </details>
+      <details class="faq">
+        <summary>What happens after 10 years?</summary>
+        <p>The $100 covers 10 years of hosting, counted from your payment date. That is the hosting term included in the price.</p>
+      </details>
+      <details class="faq">
+        <summary>How do I pay?</summary>
+        <p>By PayPal invoice, once you&rsquo;ve seen your preview and want to keep it.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container center narrow">
+      <h2>Own your traffic.</h2>
+      <p class="muted">Send us your Etsy shop and Instagram, and we&rsquo;ll build your preview site for free.</p>
+      <div class="hero-actions hero-actions--center">
+        <a class="btn btn-primary" href="mailto:hello@exclusivewebsite.online?subject=Free%20preview%20site&amp;body=Hi!%20I%27d%20like%20a%20free%20preview%20site.%0A%0AMy%20Etsy%20shop%3A%20%0AMy%20Instagram%3A%20">Get a free preview <span aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-outline" href="juniper-row/">See an example site</a>
+      </div>
+    </div>
+  </section>
+
 </main>
-<footer>&copy; <span id="y">2026</span> Exclusive Website Online</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-brand">Exclusive Website Online</p>
+      <p class="muted">Story-focused websites for Etsy sellers.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:hello@exclusivewebsite.online">hello@exclusivewebsite.online</a></li>
+      <li><a href="https://www.instagram.com/YOUR-HANDLE/">Instagram</a></li>
+      <li><a href="juniper-row/">Example site</a></li>
+    </ul>
+  </div>
+  <div class="container footer-small">
+    <p>&copy; 2026 Exclusive Website Online. Etsy is a trademark of Etsy, Inc. This site is not affiliated with Etsy. This site has no forms and no tracking.</p>
+  </div>
+</footer>
 </body>
 </html>
