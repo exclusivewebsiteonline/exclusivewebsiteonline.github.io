@@ -90,6 +90,10 @@ p { margin: 0 0 1em; }
   background: var(--color-accent); color: var(--color-accent-ink);
   font: 600 1.15rem/1 var(--font-display);
 }
+.brand-logo {
+  display: block; width: 44px; height: 44px; flex: none; border-radius: 10px; object-fit: cover;
+  background: #fff; box-shadow: 0 0 0 1px var(--line);
+}
 .brand-name { font: 600 1.15rem/1 var(--font-display); white-space: nowrap; }
 .brand-name em { font-style: italic; font-weight: 400; color: var(--color-muted); }
 .site-nav { display: flex; align-items: center; gap: 1.5rem; }
@@ -359,3 +363,44 @@ html.modal-open { overflow: hidden; }
 .legal .legal-updated { margin-top: 2.2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-size: .9rem; color: var(--color-muted); }
 .legal a { color: var(--color-accent); }
 .legal-back { text-align: center; margin: 2rem 0 0; }
+
+/* ---------- Testimonials slider ---------- */
+.testimonials { text-align: left; }
+.testimonials-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
+.testimonials-head .eyebrow { color: inherit; opacity: .85; margin: 0 0 .35rem; }
+.testimonials-head h2 { color: #fff; margin: 0; font: 500 clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem)/1.2 var(--font-display); }
+.t-controls { display: flex; align-items: center; gap: .5rem; }
+.t-btn {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+  border: 1px solid rgba(255,255,255,.55); background: transparent; color: #fff; padding: 0;
+}
+.t-btn:hover { background: rgba(255,255,255,.14); }
+.t-btn:focus-visible, .t-dot:focus-visible, .t-track:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.t-btn svg { width: 20px; height: 20px; }
+.t-btn[hidden], .t-controls[hidden] { display: none; }
+.t-track {
+  display: flex; gap: 1.25rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  list-style: none; margin: 0; padding: .25rem 0 1rem;
+}
+.t-track::-webkit-scrollbar { display: none; }
+.t-slide {
+  flex: 0 0 100%; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: space-between;
+  gap: 1.1rem; margin: 0; padding: 1.6rem 1.5rem 1.4rem; border-radius: var(--radius, 14px);
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22);
+}
+@media (min-width: 700px) { .t-slide { flex-basis: calc((100% - 1.25rem) / 2); } }
+@media (min-width: 1020px) { .t-slide { flex-basis: calc((100% - 2.5rem) / 3); } }
+.testimonials .t-stars { font: 400 1rem/1 var(--font-body, inherit); color: #ffd98a; letter-spacing: .12em; font-size: 1rem; line-height: 1; margin: 0 0 .7rem; }
+.t-slide blockquote { margin: 0; }
+.testimonials .t-slide blockquote p { font: 400 italic clamp(1.05rem, 1rem + .3vw, 1.2rem)/1.55 var(--font-display); margin: 0; }
+.testimonials .t-name { margin: 0; font: 600 1rem/1.3 var(--font-body, inherit); font-style: normal; letter-spacing: .02em; }
+.t-name::before { content: "\2014\00a0"; opacity: .8; }
+.t-dots { display: flex; justify-content: center; gap: .15rem; margin-top: .4rem; }
+.t-dot { width: 28px; height: 28px; border: 0; background: transparent; padding: 0; cursor: pointer; display: grid; place-items: center; }
+.t-dot::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.45); transition: transform .2s, background .2s; }
+.t-dot[aria-current="true"]::before { background: #fff; transform: scale(1.3); }
+@media (prefers-reduced-motion: reduce) {
+  .t-track { scroll-behavior: auto; }
+  .t-dot::before { transition: none; }
+}
