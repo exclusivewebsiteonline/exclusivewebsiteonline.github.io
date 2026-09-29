@@ -1,0 +1,15 @@
+/* Votive Vault — bright jewel tones / glass light */
+:root {
+  --color-bg:        #f7f1ea;
+  --color-surface:   #fffaf4;
+  --color-ink:       #1f2430;
+  --color-muted:     #5c6474;
+  --color-accent:    #c43d5a;
+  --color-accent-ink:#ffffff;
+  --color-accent-2:  #2f6f9f;
+  --color-deep:      #24182a;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 14px;
+}
