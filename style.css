@@ -99,11 +99,12 @@ p { margin: 0 0 1em; }
 .compare-arrow { align-self: center; font: 500 2rem/1 var(--font-display); color: var(--color-accent); }
 @media (max-width: 760px) { .compare { grid-template-columns: 1fr; } .compare-arrow { justify-self: center; transform: rotate(90deg); } }
 .subhead { text-align: center; margin: clamp(3rem, 2rem + 3vw, 4.5rem) 0 1.8rem; font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); }
-.features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+.features { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
 .feature { background: var(--color-bg); border-radius: var(--radius); padding: 1.5rem; border: 1px solid var(--line); }
 .feature-num { display: block; font: 500 1.6rem/1 var(--font-script); color: var(--color-accent); margin-bottom: .6rem; }
 .feature p { color: var(--color-muted); margin: 0; font-size: .98rem; }
-@media (max-width: 980px) { .features { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1060px) { .features { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) { .features { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .features { grid-template-columns: 1fr; } }
 
 /* Steps */
