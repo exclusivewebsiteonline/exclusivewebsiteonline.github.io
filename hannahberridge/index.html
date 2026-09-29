@@ -30,7 +30,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="#top" aria-label="Hannah Berridge, home">
-      <span class="brand-mark" aria-hidden="true">H</span>
+      <img class="brand-logo" src="img/logo.webp" alt="" width="44" height="44">
       <span class="brand-name">Hannah <em>Berridge</em></span>
     </a>
     <nav class="site-nav" aria-label="Main">
@@ -155,12 +155,71 @@
     </div>
   </section>
 
-  <section class="quote-band">
-    <div class="container">
-      <blockquote>
-        <p>&ldquo;Hannah&rsquo;s work is always exceptional. Her designs are so stunning&hellip; uniquely special gifts&hellip; every piece I have ordered has been so special, simply stunning works of art.&rdquo;</p>
-        <cite>&mdash; Arabella, customer review</cite>
-      </blockquote>
+  <section id="reviews" class="quote-band testimonials" aria-roledescription="carousel" aria-labelledby="reviews-title">
+    <div class="container" data-slider>
+      <div class="testimonials-head">
+        <div>
+          <p class="eyebrow">Reviews</p>
+          <h2 id="reviews-title">Kind words from customers</h2>
+        </div>
+        <div class="t-controls" hidden>
+          <button type="button" class="t-btn" data-toggle aria-pressed="false" aria-label="Pause automatic slide show"><svg class="i-pause" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4.5v11M13 4.5v11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 20 20" aria-hidden="true" style="display:none"><path d="M6.5 4.5v11l9-5.5z" fill="currentColor"/></svg></button>
+          <button type="button" class="t-btn" data-prev aria-label="Previous review"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="t-btn" data-next aria-label="Next review"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="t-track" tabindex="0" role="region" aria-label="Reviews, scroll sideways for more">
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;Hannah's work is always exceptional. Her designs are so stunning. This snowdrop heart dish is exquisite, and the personalisation done so beautifully… Hannah is an amazing artist and such a skilled painter, every piece I have ordered has been so special, simply stunning works of art.&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Arabella</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;I am absolutely thrilled with my beautiful teapot which arrived safely this morning. It is just gorgeous and exactly as the photo and description but so much better in front of me. The seller was brilliant and got it to me so quickly.&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Angela</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;A gorgeous jug which I love so much that I don't want to give it away as a present - but I must. I will shop again for further presents. Communication was excellent and packaging perfect. Thank you.&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Heidi</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;Beautiful mug, beautifully hand painted. Great communication from the seller. I would thoroughly recommend!&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Chloe</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;a beautiful, unique toothbrush holder.. even better than I thought - thank you Hannah!&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Anna</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;Lovely mug, brilliant gift for my pal. Great communication. Thank you!&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Emma</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;Amazing butter dish and lovely seller.&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Cathy</p>
+        </div>
+      </div>
+      <div class="t-dots"></div>
     </div>
   </section>
 
