@@ -26,7 +26,7 @@
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#example">Example</a>
-      <a class="btn btn-small" href="mailto:hello@exclusivewebsite.online?subject=Free%20preview%20site&amp;body=Hi!%20I%27d%20like%20a%20free%20preview%20site.%0A%0AMy%20Etsy%20shop%3A%20%0AMy%20Instagram%3A%20">Free preview</a>
+      <a class="btn btn-small js-preview" href="#preview">Free preview</a>
     </nav>
   </div>
 </header>
@@ -40,7 +40,7 @@
         <h1>Own your Instagram&nbsp;traffic.</h1>
         <p class="lead">Right now your bio link sends followers straight to Etsy. With your own site, they land on a page that&rsquo;s yours, hear your story, and can join your email list on the way to your shop.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:hello@exclusivewebsite.online?subject=Free%20preview%20site&amp;body=Hi!%20I%27d%20like%20a%20free%20preview%20site.%0A%0AMy%20Etsy%20shop%3A%20%0AMy%20Instagram%3A%20">Get a free preview <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-primary js-preview" href="#preview">Get a free preview <span aria-hidden="true">&rarr;</span></a>
           <a class="btn btn-outline" href="juniper-row/">See an example site</a>
         </div>
         <p class="hero-note"><span class="script">Try before you buy</span> &mdash; we build your preview first, free. Keep it for $100, one time.</p>
@@ -159,7 +159,7 @@
           <li>Changes you ask for</li>
           <li>Paid by PayPal invoice</li>
         </ul>
-        <a class="btn btn-primary btn-block" href="mailto:hello@exclusivewebsite.online?subject=Free%20preview%20site&amp;body=Hi!%20I%27d%20like%20a%20free%20preview%20site.%0A%0AMy%20Etsy%20shop%3A%20%0AMy%20Instagram%3A%20">Get a free preview</a>
+        <a class="btn btn-primary btn-block js-preview" href="#preview">Get a free preview</a>
       </div>
     </div>
   </section>
@@ -219,7 +219,7 @@
       <h2>Own your traffic.</h2>
       <p class="muted">Send us your Etsy shop and Instagram, and we&rsquo;ll build your preview site for free.</p>
       <div class="hero-actions hero-actions--center">
-        <a class="btn btn-primary" href="mailto:hello@exclusivewebsite.online?subject=Free%20preview%20site&amp;body=Hi!%20I%27d%20like%20a%20free%20preview%20site.%0A%0AMy%20Etsy%20shop%3A%20%0AMy%20Instagram%3A%20">Get a free preview <span aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-primary js-preview" href="#preview">Get a free preview <span aria-hidden="true">&rarr;</span></a>
         <a class="btn btn-outline" href="juniper-row/">See an example site</a>
       </div>
     </div>
@@ -237,11 +237,58 @@
       <li><a href="mailto:hello@exclusivewebsite.online">hello@exclusivewebsite.online</a></li>
       <li><a href="https://www.instagram.com/YOUR-HANDLE/">Instagram</a></li>
       <li><a href="juniper-row/">Example site</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
     </ul>
   </div>
   <div class="container footer-small">
-    <p>&copy; 2026 Exclusive Website Online. Etsy is a trademark of Etsy, Inc. This site is not affiliated with Etsy. This site has no forms and no tracking.</p>
+    <p>&copy; 2026 Exclusive Website Online. Etsy is a trademark of Etsy, Inc. This site is not affiliated with Etsy. No analytics or tracking; the preview request form is sent through FormSubmit (formsubmit.co). <a href="privacy.html">Privacy</a></p>
   </div>
 </footer>
+
+<div class="modal" id="preview" role="dialog" aria-modal="true" aria-labelledby="preview-title">
+  <a class="modal-backdrop" href="#" tabindex="-1" aria-hidden="true"></a>
+  <div class="modal-card">
+    <a class="modal-close" href="#" aria-label="Close">&times;</a>
+    <div class="modal-body" id="preview-body">
+      <p class="eyebrow">Free preview</p>
+      <h2 id="preview-title">Get your free preview site</h2>
+      <p class="modal-intro">Tell us your shop and we&rsquo;ll build your preview. No cost unless you decide to keep it.</p>
+      <form id="preview-form" class="pform" action="https://formsubmit.co/enduringbenevolence@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New preview request">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://exclusivewebsiteonline.github.io/thanks.html">
+        <div class="hp" aria-hidden="true"><label for="f-honey">Leave this empty</label><input id="f-honey" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+
+        <div class="field">
+          <label for="f-shop">Your Etsy shop</label>
+          <input id="f-shop" name="etsy_shop" type="text" required autocomplete="url" autocapitalize="off" spellcheck="false" maxlength="200" placeholder="etsy.com/shop/YourShop" aria-describedby="f-shop-hint f-shop-err">
+          <p class="hint" id="f-shop-hint">Shop link or just the shop name.</p>
+          <p class="err" id="f-shop-err" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="f-email">Email address</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" aria-describedby="f-email-err">
+          <p class="err" id="f-email-err" aria-live="polite"></p>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-ig">Instagram <span class="opt">(optional)</span></label>
+            <input id="f-ig" name="instagram" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="100" placeholder="@yourshop" aria-describedby="f-ig-err">
+            <p class="err" id="f-ig-err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="f-name">First name <span class="opt">(optional)</span></label>
+            <input id="f-name" name="first_name" type="text" autocomplete="given-name" maxlength="60">
+          </div>
+        </div>
+        <p class="form-error" id="f-error" role="alert" hidden></p>
+        <button class="btn btn-primary btn-block" type="submit" id="f-submit">Send my request</button>
+        <p class="consent">We&rsquo;ll use your email only to send your preview and follow up about it. <a href="privacy.html">Privacy</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="main.js" defer></script>
 </body>
 </html>
