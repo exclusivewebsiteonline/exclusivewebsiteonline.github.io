@@ -30,7 +30,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="#top" aria-label="Evers Art Shop, home">
-      <span class="brand-mark" aria-hidden="true">E</span>
+      <img class="brand-logo" src="img/logo.webp" alt="" width="44" height="44">
       <span class="brand-name">Evers Art <em>Shop</em></span>
     </a>
     <nav class="site-nav" aria-label="Main">
@@ -154,12 +154,71 @@
     </div>
   </section>
 
-  <section class="quote-band">
-    <div class="container">
-      <blockquote>
-        <p>&ldquo;This is a beautifully crafted mug&hellip; she was so thoughtful and made me feel like I was heard. I ultimately got 2 of her mugs and am impressed with both.&rdquo;</p>
-        <cite>&mdash; Jocelynn, customer review</cite>
-      </blockquote>
+  <section id="reviews" class="quote-band testimonials" aria-roledescription="carousel" aria-labelledby="reviews-title">
+    <div class="container" data-slider>
+      <div class="testimonials-head">
+        <div>
+          <p class="eyebrow">Reviews</p>
+          <h2 id="reviews-title">Kind words from customers</h2>
+        </div>
+        <div class="t-controls" hidden>
+          <button type="button" class="t-btn" data-toggle aria-pressed="false" aria-label="Pause automatic slide show"><svg class="i-pause" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4.5v11M13 4.5v11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 20 20" aria-hidden="true" style="display:none"><path d="M6.5 4.5v11l9-5.5z" fill="currentColor"/></svg></button>
+          <button type="button" class="t-btn" data-prev aria-label="Previous review"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="t-btn" data-next aria-label="Next review"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="t-track" tabindex="0" role="region" aria-label="Reviews, scroll sideways for more">
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;This is a beautifully crafted mug… she was so thoughtful and made me feel like I was heard. I ultimately got 2 of her mugs and am impressed with both. Highly recommend this seller.&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Jocelynn</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;This was my second ghost I bought from this seller. Best customer service ever! Super friendly and kind enough to even chat with me for a bit, definitely very personable! Recommend her 1000x over!…&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Kelsey</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;These small clay pinch pots exceeded my expectations! Beautifully made, sturdy, and even more charming in person. The craftsmanship is excellent, and they arrived carefully packaged. Very happy with my purchase!&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Alex</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;Great communication with seller, speedy shipping and delivery. Great quality product with exceptional details on the artwork. Spitting image of the model used.&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Eddie</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;absolutely perfect! and You have brindle as an option for Bostons which is so hard for me to find. I got it for my mom as a birthday gift and she was so EXCITED about it! 10/10&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Danny</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;Jazmin was so responsive, and make my ordering process SO easy!! I will definitely be keeping an eye in her shop and ordering again in the future!&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Meghan</p>
+        </div>
+        <div class="t-slide">
+          <div>
+            <p class="t-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote><p>&ldquo;…These are so cute just what i was hoping for, and thank you so much for the beautiful gift. Makes me want to play with clay&rdquo;</p></blockquote>
+          </div>
+          <p class="t-name">Heather</p>
+        </div>
+      </div>
+      <div class="t-dots"></div>
     </div>
   </section>
 

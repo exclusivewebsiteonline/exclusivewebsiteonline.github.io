@@ -159,3 +159,98 @@
     openModal(link.href, link);
   });
 })();
+
+/* ---------- Testimonials slider ----------
+   Native horizontal scroll-snap track (swipe/drag/trackpad work without JS).
+   JS adds prev/next, dots, and gentle auto-advance that pauses on hover, focus,
+   touch, when off-screen or the tab is hidden, and never runs with prefers-reduced-motion.
+   The Pause/Play button stops it for good (WCAG 2.2.2). */
+(function () {
+  var root = document.querySelector('[data-slider]');
+  if (!root) return;
+  var track = root.querySelector('.t-track');
+  var slides = Array.prototype.slice.call(track.children);
+  var prev = root.querySelector('[data-prev]'), next = root.querySelector('[data-next]');
+  var toggle = root.querySelector('[data-toggle]');
+  var dotsWrap = root.querySelector('.t-dots');
+  if (slides.length < 2) { root.querySelector('.t-controls').hidden = true; return; }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  var INTERVAL = 6000, timer = null, hovering = false, focused = false, touching = false, visible = true, stopped = false;
+
+  root.querySelector('.t-controls').hidden = false;
+  slides.forEach(function (s, i) {
+    s.setAttribute('role', 'group');
+    s.setAttribute('aria-roledescription', 'slide');
+    s.setAttribute('aria-label', (i + 1) + ' of ' + slides.length);
+  });
+
+  function step() { return slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth; }
+  function perView() { return Math.max(1, Math.round(track.clientWidth / step())); }
+  function pages() { return Math.max(1, slides.length - perView() + 1); }
+  function current() { return Math.min(pages() - 1, Math.round(track.scrollLeft / step())); }
+  function go(i, smooth) {
+    var n = pages();
+    i = (i + n) % n;
+    var left = slides[i].offsetLeft - slides[0].offsetLeft;
+    var behavior = (smooth === false || (reduce && reduce.matches)) ? 'auto' : 'smooth';
+    try { track.scrollTo({ left: left, behavior: behavior }); } catch (e) { track.scrollLeft = left; }
+  }
+
+  var dots = [];
+  function buildDots() {
+    dotsWrap.innerHTML = ''; dots = [];
+    for (var i = 0; i < pages(); i++) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 't-dot';
+      b.setAttribute('aria-label', 'Show review ' + (i + 1));
+      (function (k) { b.addEventListener('click', function () { go(k); }); })(i);
+      dotsWrap.appendChild(b); dots.push(b);
+    }
+    sync();
+  }
+  function sync() {
+    var c = current();
+    dots.forEach(function (d, i) { if (i === c) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
+  }
+
+  function canRun() { return !stopped && !hovering && !focused && !touching && visible && !document.hidden && !(reduce && reduce.matches); }
+  function schedule() {
+    clearTimeout(timer);
+    if (canRun()) timer = setTimeout(function () { go(current() + 1); schedule(); }, INTERVAL);
+  }
+  function setStopped(v) {
+    stopped = v;
+    toggle.setAttribute('aria-pressed', v ? 'true' : 'false');
+    toggle.setAttribute('aria-label', v ? 'Play automatic slide show' : 'Pause automatic slide show');
+    toggle.querySelector('.i-pause').style.display = v ? 'none' : '';
+    toggle.querySelector('.i-play').style.display = v ? '' : 'none';
+    schedule();
+  }
+
+  prev.addEventListener('click', function () { go(current() - 1); });
+  next.addEventListener('click', function () { go(current() + 1); });
+  toggle.addEventListener('click', function () { setStopped(!stopped); });
+  track.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); }
+  });
+  var raf = 0;
+  track.addEventListener('scroll', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(sync); }, { passive: true });
+  root.addEventListener('mouseenter', function () { hovering = true; schedule(); });
+  root.addEventListener('mouseleave', function () { hovering = false; schedule(); });
+  root.addEventListener('focusin', function () { focused = true; schedule(); });
+  root.addEventListener('focusout', function (e) { if (!root.contains(e.relatedTarget)) { focused = false; schedule(); } });
+  track.addEventListener('touchstart', function () { touching = true; schedule(); }, { passive: true });
+  track.addEventListener('touchend', function () { setTimeout(function () { touching = false; schedule(); }, 4000); }, { passive: true });
+  document.addEventListener('visibilitychange', schedule);
+  if (reduce && reduce.addEventListener) reduce.addEventListener('change', schedule);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) { visible = en[0].isIntersecting; schedule(); }, { threshold: 0.3 }).observe(root);
+  }
+  var rs = 0;
+  window.addEventListener('resize', function () { clearTimeout(rs); rs = setTimeout(buildDots, 150); });
+
+  // Reduced motion: no auto-advance at all, so the Pause/Play button isn't needed.
+  if (reduce && reduce.matches) { stopped = true; toggle.hidden = true; } else setStopped(false);
+  buildDots();
+})();
