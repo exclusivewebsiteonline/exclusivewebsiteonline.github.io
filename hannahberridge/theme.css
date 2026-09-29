@@ -1,0 +1,15 @@
+/* Hannah Berridge — soft coastal / Suffolk countryside ceramics */
+:root {
+  --color-bg:        #f3f0e8;
+  --color-surface:   #fffcf6;
+  --color-ink:       #2a332c;
+  --color-muted:     #5f6b62;
+  --color-accent:    #4a7c8c;
+  --color-accent-ink:#ffffff;
+  --color-accent-2:  #c4785a;
+  --color-deep:      #2f3d38;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 14px;
+}
