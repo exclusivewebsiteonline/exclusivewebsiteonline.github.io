@@ -1,0 +1,15 @@
+/* Bohemian Soul Shine — warm rust / dusty rose / sun-washed cream */
+:root {
+  --color-bg:        #f7efe6;
+  --color-surface:   #fff8f1;
+  --color-ink:       #2c211c;
+  --color-muted:     #6b564c;
+  --color-accent:    #a85a3a;
+  --color-accent-ink:#ffffff;
+  --color-accent-2:  #7a8b6f;
+  --color-deep:      #3a261c;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 14px;
+}
