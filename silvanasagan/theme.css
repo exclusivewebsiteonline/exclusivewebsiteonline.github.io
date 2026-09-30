@@ -1,0 +1,15 @@
+/* Silvana Sagan — cool charcoal / soft gold / pearl cream */
+:root {
+  --color-bg:        #f4f1ec;
+  --color-surface:   #fbfaf7;
+  --color-ink:       #1c1f24;
+  --color-muted:     #5a616c;
+  --color-accent:    #8a6d3b;
+  --color-accent-ink:#ffffff;
+  --color-accent-2:  #3d5a6c;
+  --color-deep:      #1a1d22;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 14px;
+}
