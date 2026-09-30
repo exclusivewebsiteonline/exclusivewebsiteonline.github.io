@@ -1,6 +1,6 @@
-/* Free preview popup: open/close, light validation, AJAX submit to FormSubmit. Without JS the form still works (:target + normal POST). */
+/* Free preview popup: open/close, light validation, AJAX (JSON) submit to Web3Forms. Without JS the form still works (:target + normal POST). */
 (function () {
-  var ENDPOINT = 'https://formsubmit.co/ajax/enduringbenevolence@gmail.com';
+  var ENDPOINT = 'https://api.web3forms.com/submit';
   var CONTACT = 'hello@exclusivewebsite.online';
   var THANKS = 'Your site is in the works! You\u2019ll receive an email with your preview as soon as it\u2019s done.';
   var modal = document.getElementById('preview');
@@ -102,10 +102,10 @@
     var data = {
       etsy_shop: 'https://www.etsy.com/shop/' + v.shop,
       email: $('f-email').value.trim(),
-      _subject: 'New preview request: ' + v.shop,
-      _template: 'table',
-      _captcha: 'false',
-      _honey: $('f-honey').value
+      access_key: form.elements.access_key.value,
+      subject: 'New preview request: ' + v.shop,
+      from_name: 'Exclusive Website Online',
+      botcheck: $('f-honey').checked
     };
     if (v.ig) data.instagram = '@' + v.ig;
     var name = $('f-name').value.trim(); if (name) data.first_name = name;

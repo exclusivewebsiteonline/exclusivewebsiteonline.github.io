@@ -241,7 +241,7 @@
     </ul>
   </div>
   <div class="container footer-small">
-    <p>&copy; 2026 Exclusive Website Online. Etsy is a trademark of Etsy, Inc. This site is not affiliated with Etsy. No analytics or tracking; the preview request form is sent through FormSubmit (formsubmit.co). <a href="privacy.html">Privacy</a></p>
+    <p>&copy; 2026 Exclusive Website Online. Etsy is a trademark of Etsy, Inc. This site is not affiliated with Etsy. No analytics or tracking; the preview request form is sent through Web3Forms (web3forms.com). <a href="privacy.html">Privacy</a></p>
   </div>
 </footer>
 
@@ -253,12 +253,12 @@
       <p class="eyebrow">Free preview</p>
       <h2 id="preview-title">Get your free preview site</h2>
       <p class="modal-intro">Tell us your shop and we&rsquo;ll build your preview. No cost unless you decide to keep it.</p>
-      <form id="preview-form" class="pform" action="https://formsubmit.co/enduringbenevolence@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New preview request">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://exclusivewebsiteonline.github.io/thanks.html">
-        <div class="hp" aria-hidden="true"><label for="f-honey">Leave this empty</label><input id="f-honey" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+      <form id="preview-form" class="pform" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="7d551a6a-05c1-472f-bfa6-667464fc5e83">
+        <input type="hidden" name="subject" value="New preview request">
+        <input type="hidden" name="from_name" value="Exclusive Website Online">
+        <input type="hidden" name="redirect" value="https://exclusivewebsiteonline.github.io/thanks.html">
+        <div class="hp" aria-hidden="true"><label for="f-honey">Leave this unchecked</label><input id="f-honey" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none"></div>
 
         <div class="field">
           <label for="f-shop">Your Etsy shop</label>

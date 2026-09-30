@@ -1,8 +1,0 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Test</title>
-<style>body{font-family:sans-serif;max-width:420px;margin:40px auto;padding:0 16px}button{font-size:20px;padding:14px 24px;width:100%}#r{margin-top:20px;font-size:18px}</style></head><body>
-<h2>Web3Forms delivery test</h2><p>Tap once, then check Gmail for "TEST 3: web3forms from phone".</p>
-<button id="b">Send test</button><div id="r"></div>
-<script>
-document.getElementById('b').onclick=async()=>{const r=document.getElementById('r');r.textContent='Sending...';
-try{const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'7d551a6a-05c1-472f-bfa6-667464fc5e83',subject:'TEST 3: web3forms from phone (ignore)',from_name:'Exclusive Website Online',action:'test'})});const j=await res.json();r.textContent=j.success?'Sent! Check Gmail.':'Error: '+j.message;}catch(e){r.textContent='Network error: '+e.message}};
-</script></body></html>
