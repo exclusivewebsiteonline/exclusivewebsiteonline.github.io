@@ -124,7 +124,7 @@ border:1px solid rgba(47,36,29,.3);background:#fff;color:var(--ink);resize:verti
 }
 </style></head>
 <body><div class="wrap">
-<header><h1>Pipeline board</h1><span class="updated">Last updated <span id="updated">Wed 30 Sep 2026, 17:30</span> (Israel time, Asia/Jerusalem)</span></header>
+<header><h1>Pipeline board</h1><span class="updated">Last updated <span id="updated">Wed 30 Sep 2026, 20:00</span> (Israel time, Asia/Jerusalem)</span></header>
 <p class="summary"><b>4</b> previews live · <b>4</b> waiting for your OK · <b>0</b> offers out · <b>0</b> accepted · <b>0</b> paid clients · <b>0</b> live on Hostinger · 32 shops tracked, 200 screened out by Shop Scout</p>
 <ul class="chips"><li><a href="#col-new" class=""><b>28</b>New</a></li><li><a href="#col-picked" class="zero"><b>0</b>Picked</a></li><li><a href="#col-built" class="zero"><b>0</b>Built</a></li><li><a href="#col-waiting" class=""><b>4</b>Waiting OK</a></li><li><a href="#col-offer" class="zero"><b>0</b>Offer sent</a></li><li><a href="#col-accepted" class="zero"><b>0</b>Accepted</a></li><li><a href="#col-invoice" class="zero"><b>0</b>Invoice/Paid</a></li><li><a href="#col-live" class="zero"><b>0</b>Live</a></li><li><a href="#col-declined" class="zero"><b>0</b>Declined</a></li></ul>
 <div class="tools"><input id="q" type="search" placeholder="Filter by shop, handle, product, note…" aria-label="Filter cards" autocomplete="off"><button type="button" class="btn" id="clear">Clear</button></div>
@@ -163,7 +163,7 @@ Let me know what you think, and if there&#x27;s anything you&#x27;d like me to c
 Yeshaya @ Exclusive Website Online</div></details><button type="button" class="obtn copy" data-act="copy">Copy DM &amp; open Instagram</button><div class="ok-btns"><button type="button" class="obtn approve" data-act="approve">Approve &amp; open IG</button><button type="button" class="obtn changes" data-act="changes" aria-expanded="false">Request changes</button><button type="button" class="obtn skip" data-act="skip">Skip</button></div><div class="ok-note" hidden><label>What should change?<textarea rows="3" maxlength="2000" placeholder="e.g. mention her mugs instead of the plant pots"></textarea></label><div class="ok-btns"><button type="button" class="obtn send" data-act="send">Send change request</button><button type="button" class="obtn cancel" data-act="cancel">Cancel</button></div></div><div class="ok-status" role="status" aria-live="polite"></div></div></article></div></details><details class="col offer zero" id="col-offer" data-desktop-open="1" data-mobile-open="0" open><summary><span>Offer sent<span class="chev" aria-hidden="true">›</span></span><span class="n">0</span></summary><div class="cards"><p class="empty">Nothing here yet.</p></div></details><details class="col accepted zero" id="col-accepted" data-desktop-open="1" data-mobile-open="0" open><summary><span>Accepted<span class="chev" aria-hidden="true">›</span></span><span class="n">0</span></summary><div class="cards"><p class="empty">Nothing here yet.</p></div></details><details class="col invoice zero" id="col-invoice" data-desktop-open="1" data-mobile-open="0" open><summary><span>Invoice sent / Paid<span class="chev" aria-hidden="true">›</span></span><span class="n">0</span></summary><div class="cards"><p class="empty">Nothing here yet.</p></div></details><details class="col live zero" id="col-live" data-desktop-open="1" data-mobile-open="0" open><summary><span>Live on Hostinger<span class="chev" aria-hidden="true">›</span></span><span class="n">0</span></summary><div class="cards"><p class="empty">Nothing here yet.</p></div></details><details class="col declined zero" id="col-declined" data-desktop-open="0" data-mobile-open="0"><summary><span>Declined / no reply / taken down<span class="chev" aria-hidden="true">›</span></span><span class="n">0</span></summary><div class="cards"><p class="empty">Nothing here yet.</p></div></details></main>
 <p class="nomatch" id="nomatch">No cards match.</p>
 <div class="foot"><p>Sources: prospects.csv, builds/_dm drafts, Pages repo. Days = days in the current stage, or since the shop was added when no stage date is recorded.</p><ul><li>Other folders live on GitHub Pages (not in prospects.csv): juniper-row</li></ul></div>
-</div><script type="application/json" id="ok-cfg">{"endpoint": "https://formsubmit.co/ajax/enduringbenevolence@gmail.com", "email": "enduringbenevolence@gmail.com", "subjectField": "_subject", "extra": {"_template": "table", "_captcha": "false"}}</script><script>
+</div><script type="application/json" id="ok-cfg">{"endpoint": "https://formsubmit.co/ajax/enduringbenevolence@gmail.com", "email": "enduringbenevolence@gmail.com"}</script><script>
 (function(){
   var mobile=window.matchMedia('(max-width:760px)');
   var cols=[].slice.call(document.querySelectorAll('.col'));
@@ -216,7 +216,7 @@ Yeshaya @ Exclusive Website Online</div></details><button type="button" class="o
   }
   function mailto(f){
     var body=['action: '+f.action,'shop: '+f.shop,'stage: '+f.stage,'item: '+f.item,'note: '+f.note].join('\n');
-    return 'mailto:'+CFG.email+'?subject='+encodeURIComponent(f[CFG.subjectField])+'&body='+encodeURIComponent(body);
+    return 'mailto:'+CFG.email+'?subject='+encodeURIComponent(f._subject)+'&body='+encodeURIComponent(body);
   }
   function el(tag,cls,text){var x=document.createElement(tag);if(cls)x.className=cls;if(text!=null)x.textContent=text;return x;}
   function showDone(b,s){
@@ -233,13 +233,12 @@ Yeshaya @ Exclusive Website Online</div></details><button type="button" class="o
     var st=b.querySelector('.ok-status');st.className='ok-status error';st.textContent='';
     st.appendChild(el('span','','Not sent. '));
     if(msg)st.appendChild(el('span','why',msg));
-    var a=el('a','','Email it instead: '+f[CFG.subjectField]);a.href=mailto(f);st.appendChild(a);
+    var a=el('a','','Email it instead: '+f._subject);a.href=mailto(f);st.appendChild(a);
     b.querySelectorAll('.obtn').forEach(function(x){x.disabled=false;});
   }
   function send(b,action,note){
-    var f={};Object.keys(CFG.extra||{}).forEach(function(k){f[k]=CFG.extra[k];});
-    f[CFG.subjectField]=SUBJ[action]+': '+b.dataset.shop;
-    f.action=action;f.shop=b.dataset.shop;f.stage=b.dataset.stage;f.note=note||'';f.item=(action==='build'?'build':b.dataset.item);
+    var f={_subject:SUBJ[action]+': '+b.dataset.shop,action:action,shop:b.dataset.shop,stage:b.dataset.stage,
+      note:note||'',item:(action==='build'?'build':b.dataset.item),_template:'table',_captcha:'false'};
     var st=b.querySelector('.ok-status');st.className='ok-status sending';st.textContent='Sending\u2026';
     b.querySelectorAll('.obtn').forEach(function(x){x.disabled=true;});
     var ctl=window.AbortController?new AbortController():null;var tm=setTimeout(function(){if(ctl)ctl.abort();},20000);
