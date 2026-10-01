@@ -6,6 +6,39 @@
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
+  /* ---------- Anonymous visit counter ----------
+     Only when the page has <meta name="ew-stats" content="(endpoint)"> (config stats_enabled; never in static previews).
+     Sends: event, page path, referring page, ?utm_source, touch-Mac hint, automated-browser flag. No cookies, no IDs;
+     the server keeps daily totals only (see the stats partial in partials/). */
+  var statsMeta = document.querySelector('meta[name="ew-stats"]');
+  var statsUrl = statsMeta && statsMeta.getAttribute('content');
+  function stat(e) {
+    if (!statsUrl || !window.URLSearchParams) return;
+    try {
+      var d = new URLSearchParams();
+      d.append('e', e);
+      if (e === 'view') {
+        var utm = /[?&]utm_source=([^&#]*)/.exec(location.search);
+        d.append('p', location.pathname);
+        d.append('r', document.referrer || '');
+        d.append('u', utm ? decodeURIComponent(utm[1].replace(/\+/g, ' ')) : '');
+        d.append('t', navigator.maxTouchPoints > 1 ? '1' : '0');
+      }
+      d.append('w', navigator.webdriver ? '1' : '0');
+      if (navigator.sendBeacon && navigator.sendBeacon(statsUrl, d)) return;
+      if (window.fetch) fetch(statsUrl, { method: 'POST', body: d, keepalive: true, credentials: 'omit' }).catch(function () {});
+    } catch (err) {}
+  }
+  if (statsUrl) {
+    if (document.prerendering) document.addEventListener('prerenderingchange', function () { stat('view'); }, { once: true });
+    else stat('view');
+    // Every "Shop now" / shop link click (popup or not). Clicks inside the popup are counted separately.
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('a.js-shop');
+      if (link && !link.closest('#shop-modal')) stat('shop');
+    }, true);
+  }
+
   if (!window.fetch || !window.FormData) return;
 
   /* ---------- Remember signup / "no thanks" for 30 days ---------- */
@@ -117,6 +150,7 @@
     cont.href = href;
     document.documentElement.classList.add('modal-open');
     modal.showModal();
+    stat('popup');
     var first = modal.querySelector('[data-step="form"]:not([hidden]) input[type="email"]') || focusables()[0];
     if (first) first.focus();
   }
@@ -147,7 +181,7 @@
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
 
-  skip.addEventListener('click', function () { remember('dismissed'); });
+  skip.addEventListener('click', function () { remember('dismissed'); stat('nothanks'); });
 
   // Any shop button: show popup unless already signed up / said no thanks recently.
   document.addEventListener('click', function (e) {
