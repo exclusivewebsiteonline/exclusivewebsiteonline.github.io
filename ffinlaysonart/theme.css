@@ -1,0 +1,17 @@
+/* THEME: ffinlaysonart — soft wool cream, charcoal, heather teal */
+:root {
+  --color-bg: #f7f3ec;
+  --color-surface: #fffdf8;
+  --color-ink: #2a2622;
+  --color-muted: #6b635a;
+  --color-accent: #3d6b6a;
+  --color-accent-hover: #2f5554;
+  --color-line: rgba(42, 38, 34, 0.12);
+  --color-warm: #c4a484;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-script: "Caveat", cursive;
+  --radius: 14px;
+  --radius-pill: 999px;
+  --shadow: 0 18px 50px rgba(42, 38, 34, 0.12);
+}
