@@ -1,0 +1,17 @@
+/* ======================= THEME: The Rocking Felter =======================
+   Warm wool cream with the berry-red hearts from the shop logo.
+   ===================================================================== */
+:root {
+  --color-bg:        #f8f1ea;  /* warm wool cream */
+  --color-surface:   #fffaf5;  /* cards */
+  --color-ink:       #33221f;  /* main text */
+  --color-muted:     #6d5a54;  /* secondary text */
+  --color-accent:    #a8323f;  /* berry red from the logo hearts */
+  --color-accent-ink:#ffffff;  /* text on accent */
+  --color-accent-2:  #8a6a4f;  /* secondary accent (felted wool brown) */
+  --color-deep:      #3d2326;  /* dark sections */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 14px;
+}
