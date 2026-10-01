@@ -116,7 +116,7 @@ p { margin: 0 0 1em; }
 .hero-tagline { font-size: clamp(1.15rem, 1rem + .6vw, 1.4rem); max-width: 34ch; line-height: 1.5; color: #fbeee2; margin-bottom: 2rem; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
 
-/* ---------- Meet the maker ---------- */
+/* ---------- Meet the artist ---------- */
 .maker { position: relative; padding: 0 0 clamp(3.5rem, 2.5rem + 4vw, 6rem); }
 .maker-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; align-items: center; }
 .maker-photo { margin: -3.5rem auto 0; position: relative; z-index: 2; width: min(100%, 420px); }
