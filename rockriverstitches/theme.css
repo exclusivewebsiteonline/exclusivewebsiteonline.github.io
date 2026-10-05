@@ -1,0 +1,39 @@
+/* ======================= THEME: Rock River Stitches =======================
+   Warm primitive farmhouse: cream muslin and burlap, rust, mustard and old black,
+   taken from the shop's stained-fabric dolls, pumpkins and crows.
+   ========================================================================== */
+:root {
+  --color-bg:        #f5eedf;  /* cream muslin */
+  --color-surface:   #fbf7ee;  /* cards */
+  --color-ink:       #2a241d;  /* main text, old black-brown */
+  --color-muted:     #66594a;  /* secondary text, burlap brown */
+  --color-accent:    #9a4421;  /* primitive rust */
+  --color-accent-ink:#ffffff;  /* text on accent */
+  --color-accent-2:  #9a7120;  /* mustard */
+  --color-deep:      #26221d;  /* dark sections, crow black */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 10px;
+}
+/* Preview marker (try-before-you-buy) */
+.preview-banner {
+  background: var(--color-deep); color: #f3e9d6; text-align: center;
+  font: 500 .88rem/1.4 var(--font-body); padding: .6rem 1rem; letter-spacing: .01em;
+}
+.preview-banner strong { color: #e2b552; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .8rem; margin-right: .15rem; }
+/* long contact address wraps on narrow phones */
+.legal a[href^="mailto:"] { overflow-wrap: anywhere; }
+/* keep the full shop name visible on phones too */
+.brand-name .brand-keep { font-style: italic; font-weight: 400; color: var(--color-muted); }
+.site-nav .nav-shop { white-space: nowrap; }
+@media (max-width: 420px) {
+  .header-inner { gap: .6rem; }
+  .brand { gap: .45rem; }
+  .brand-logo { width: 38px; height: 38px; }
+  .brand-name { font-size: 1rem; }
+  .site-nav .nav-shop { padding: .5rem .85rem; font-size: .9rem; }
+}
+@media (max-width: 350px) { .brand-name .brand-keep { display: none; } }
+/* the shop icon is a photo, so give it a soft frame */
+.brand-logo { border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--color-accent-2); }
