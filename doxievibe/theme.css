@@ -1,0 +1,25 @@
+/* ======================= THEME: Doxie Vibe =======================
+   Soft blush cream with the dusty mauve, sage and gold of the shop's clay earrings.
+   ===================================================================== */
+:root {
+  --color-bg:        #faf4ef;  /* blush cream */
+  --color-surface:   #fffaf6;  /* cards */
+  --color-ink:       #2f2528;  /* main text */
+  --color-muted:     #6c5c60;  /* secondary text */
+  --color-accent:    #9a4f62;  /* dusty mauve rose */
+  --color-accent-ink:#ffffff;  /* text on accent */
+  --color-accent-2:  #6d8268;  /* sage clay */
+  --color-deep:      #3a2a2f;  /* dark sections */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 14px;
+}
+/* Preview marker (try-before-you-buy) */
+.preview-banner {
+  background: var(--color-deep); color: #fbeff2; text-align: center;
+  font: 500 .88rem/1.4 var(--font-body); padding: .6rem 1rem; letter-spacing: .01em;
+}
+.preview-banner strong { color: #f3c9d3; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .8rem; margin-right: .15rem; }
+/* long contact address wraps on narrow phones */
+.legal a[href^="mailto:"] { overflow-wrap: anywhere; }
