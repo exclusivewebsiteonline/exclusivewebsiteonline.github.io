@@ -48,10 +48,12 @@
   var SITE = location.hostname + (/\.github\.io$/.test(location.hostname) ? '/' + (location.pathname.split('/')[1] || '') : '');
   var KEY = 'ew_shop_gate:' + SITE;
   var TTL = 30 * 24 * 60 * 60 * 1000;
+  // Static previews (github.io) only simulate the signup: remember it for this visit only, never 30 days.
+  var PREVIEW = !!document.querySelector('form[action$="#preview-signup"]');
   try { localStorage.removeItem('ew_shop_gate'); } catch (e) {} // old origin-wide key
   function remember(state) {
     try {
-      if (state === 'subscribed') localStorage.setItem(KEY, JSON.stringify({ state: state, t: Date.now() }));
+      if (state === 'subscribed' && !PREVIEW) localStorage.setItem(KEY, JSON.stringify({ state: state, t: Date.now() }));
       else sessionStorage.setItem(KEY, state);
     } catch (e) {}
   }
