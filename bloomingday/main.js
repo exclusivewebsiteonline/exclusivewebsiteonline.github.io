@@ -41,18 +41,27 @@
 
   if (!window.fetch || !window.FormData) return;
 
-  /* ---------- Remember signup / "no thanks" for 30 days ---------- */
-  var KEY = 'ew_shop_gate';
+  /* ---------- Remember signup (30 days) / "no thanks" (this visit only) ----------
+     The key is per site: previews share one origin (exclusivewebsiteonline.github.io/<slug>/), so on github.io the
+     first path segment is part of the key. (Fix 2026-10-06: one shared key + a 30-day "no thanks" made every
+     preview's Shop now skip the popup.) */
+  var SITE = location.hostname + (/\.github\.io$/.test(location.hostname) ? '/' + (location.pathname.split('/')[1] || '') : '');
+  var KEY = 'ew_shop_gate:' + SITE;
   var TTL = 30 * 24 * 60 * 60 * 1000;
+  try { localStorage.removeItem('ew_shop_gate'); } catch (e) {} // old origin-wide key
   function remember(state) {
-    try { localStorage.setItem(KEY, JSON.stringify({ state: state, t: Date.now() })); } catch (e) {}
+    try {
+      if (state === 'subscribed') localStorage.setItem(KEY, JSON.stringify({ state: state, t: Date.now() }));
+      else sessionStorage.setItem(KEY, state);
+    } catch (e) {}
   }
   function remembered() {
     try {
       var v = JSON.parse(localStorage.getItem(KEY) || 'null');
-      if (v && Date.now() - v.t < TTL) return v.state;
+      if (v && v.state === 'subscribed' && Date.now() - v.t < TTL) return v.state;
       if (v) localStorage.removeItem(KEY);
     } catch (e) {}
+    try { return sessionStorage.getItem(KEY); } catch (e) {}
     return null;
   }
 
