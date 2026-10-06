@@ -1,0 +1,57 @@
+/* ======================= THEME: Blooming Day =======================
+   Soft impressionist palette from the shop's embroidered paintings:
+   water-lily blues and lily-pad greens on linen, with a sunflower-gold highlight.
+   ===================================================================== */
+:root {
+  --color-bg:        #f3f4ee;  /* pale linen */
+  --color-surface:   #fcfcf8;  /* cards */
+  --color-ink:       #1f2a33;  /* main text, deep blue ink */
+  --color-muted:     #56636c;  /* secondary text */
+  --color-accent:    #2f5f8a;  /* water-lily blue */
+  --color-accent-ink:#ffffff;  /* text on accent */
+  --color-accent-2:  #5e8a62;  /* lily-pad green */
+  --color-gold:      #e0b23a;  /* sunflower gold */
+  --color-deep:      #1d3347;  /* dark sections, evening pond */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 14px;
+}
+/* Preview marker (try-before-you-buy) */
+.preview-banner {
+  background: var(--color-deep); color: #e8eff4; text-align: center;
+  font: 500 .88rem/1.4 var(--font-body); padding: .6rem 1rem; letter-spacing: .01em;
+}
+.preview-banner strong { color: var(--color-gold); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .8rem; margin-right: .15rem; }
+/* cool the template's warm-brown details to fit the palette */
+.hero-overlay { background:
+    linear-gradient(90deg, rgba(14,26,38,.5) 0%, rgba(14,26,38,0) 60%),
+    linear-gradient(180deg, rgba(14,26,38,.12) 0%, rgba(14,26,38,.22) 40%, rgba(14,26,38,.85) 100%); }
+.eyebrow--light { color: #f1d98e; }
+.hero-tagline, .link-secondary--light { color: #f2f5f2; }
+.maker-badge span { color: #f1d98e; }
+.story-text p:not(.lead):not(.eyebrow):not(.signature), .steps li, .legal p { color: #34424c; }
+.join { color: #eef3f6; }
+.join-copy p:not(.eyebrow) { color: #d3dfe7; }
+.site-footer { background: #15263a; color: #c9d5de; }
+.muted-light { color: #93a4b2; }
+.footer-links a { color: #e3ebf0; }
+.footer-legal { color: #8496a5; }
+.footer-legal a { color: #bccbd6; }
+.footer-links .js-shop { color: var(--color-gold); }
+.testimonials .t-stars { color: var(--color-gold); }
+/* long contact address wraps on narrow phones */
+.legal a[href^="mailto:"] { overflow-wrap: anywhere; }
+/* keep the full shop name ("Blooming Day") visible on phones too */
+.brand-name .brand-keep { font-style: italic; font-weight: 400; color: var(--color-muted); }
+.site-nav .nav-shop { white-space: nowrap; }
+@media (max-width: 420px) {
+  .header-inner { gap: .6rem; }
+  .brand { gap: .45rem; }
+  .brand-logo { width: 38px; height: 38px; }
+  .brand-name { font-size: 1rem; }
+  .site-nav .nav-shop { padding: .5rem .85rem; font-size: .9rem; }
+}
+@media (max-width: 350px) { .brand-name .brand-keep { display: none; } }
+/* the shop icon is a photo, so give it a soft frame */
+.brand-logo { border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--color-accent-2); }
