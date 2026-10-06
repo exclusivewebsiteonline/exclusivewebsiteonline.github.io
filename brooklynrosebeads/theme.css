@@ -1,0 +1,78 @@
+/* ======================= THEME: Brooklyn Rose Beads =======================
+   Soft rose palette from the shop's logo (a pink rose under black script):
+   blush paper, rose-pink buttons, deep mauve bands, with a little gold from the letter beads.
+   The hero is a light, airy photo, so its text is dark ink on a soft blush wash.
+   ========================================================================== */
+:root {
+  --color-bg:        #fdf5f7;  /* blush paper */
+  --color-surface:   #ffffff;  /* cards */
+  --color-ink:       #2b1f25;  /* main text, near-black like the logo script */
+  --color-muted:     #6c5a62;  /* secondary text */
+  --color-accent:    #c23b6b;  /* buttons, links (rose) */
+  --color-accent-ink:#ffffff;  /* text on accent */
+  --color-accent-2:  #9a4a63;  /* secondary accent (deep rose / mauve) */
+  --color-soft:      #f7d6df;  /* petal pink */
+  --color-gold:      #e8c06a;  /* gold letter beads */
+  --color-deep:      #3f2030;  /* dark sections (plum) */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 16px;
+}
+
+/* Preview marker (try-before-you-buy) */
+.preview-banner {
+  background: var(--color-deep); color: #f6e4ea; text-align: center;
+  font: 500 .88rem/1.4 var(--font-body); padding: .6rem 1rem; letter-spacing: .01em;
+}
+.preview-banner strong { color: var(--color-soft); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .8rem; margin-right: .15rem; }
+
+/* Light hero: dark text on a blush wash over the photo */
+.hero { color: var(--color-ink); align-items: center; }
+.hero-img { object-position: 70% 35%; }
+.hero-overlay { background:
+    linear-gradient(90deg, rgba(253,240,244,.92) 0%, rgba(253,240,244,.78) 32%, rgba(253,240,244,.25) 52%, rgba(253,240,244,0) 62%); }
+.hero-content { padding: 4.5rem 0 6rem; }
+.hero h1 { font-size: clamp(2.7rem, 1.4rem + 5vw, 5rem); max-width: 9.5ch; line-height: 1.02; text-shadow: none; color: var(--color-ink); }
+.hero-tagline { color: #4b3a42; max-width: 30ch; }
+.hero-tagline em { display: block; font-style: normal; font: 500 1.75rem/1.25 var(--font-script); color: var(--color-accent); margin-top: .5rem; }
+.eyebrow--light { color: var(--color-accent-2); }
+.link-secondary--light { color: var(--color-ink); }
+@media (max-width: 859px) {
+  .hero { align-items: flex-end; }
+  .hero-img { object-position: 80% 30%; }
+  .hero-overlay { background: linear-gradient(180deg, rgba(253,240,244,0) 0%, rgba(253,240,244,.15) 30%, rgba(253,240,244,.88) 55%, rgba(253,240,244,.97) 100%); }
+  .hero-content { padding: 4rem 0 5.5rem; }
+}
+
+/* warm the template's brown details toward rose */
+.maker-badge { background: var(--color-deep); }
+.maker-badge span { color: var(--color-soft); }
+.story-text p:not(.lead):not(.eyebrow):not(.signature), .steps li, .legal p { color: #4b3a42; }
+.join { color: #fbeef2; }
+.join-copy p:not(.eyebrow) { color: #ecd3dc; }
+.join .eyebrow--light { color: var(--color-soft); }
+.site-footer { background: #2e1822; color: #e3cfd7; }
+.muted-light { color: #b298a3; }
+.footer-links a { color: #f5e6ec; }
+.footer-legal { color: #a48b96; }
+.footer-legal a { color: #dcc4ce; }
+.footer-links .js-shop { color: var(--color-soft); }
+.testimonials .t-stars { color: var(--color-gold); }
+.shop-modal::backdrop { background: rgba(43, 20, 31, .6); }
+/* long contact address wraps on narrow phones */
+.legal a[href^="mailto:"] { overflow-wrap: anywhere; }
+
+/* keep the full shop name visible on phones too */
+.brand-name .brand-keep { font-style: italic; font-weight: 400; color: var(--color-muted); }
+.site-nav .nav-shop { white-space: nowrap; }
+@media (max-width: 420px) {
+  .header-inner { gap: .6rem; }
+  .brand { gap: .45rem; }
+  .brand-logo { width: 38px; height: 38px; }
+  .brand-name { font-size: 1rem; }
+  .site-nav .nav-shop { padding: .5rem .85rem; font-size: .9rem; }
+}
+@media (max-width: 360px) { .brand-name .brand-keep { display: none; } }
+/* the shop icon is a rose on white: a soft round frame */
+.brand-logo { border-radius: 50%; object-fit: cover; background: #fff; box-shadow: 0 0 0 2px var(--color-soft); }
