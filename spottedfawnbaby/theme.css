@@ -1,0 +1,72 @@
+/* ======================= THEME: Spotted Fawn Baby Co =======================
+   Colours from the shop's round logo: deep sage-teal ring, oat/cream centre, dusty-rose fawn.
+   Cream paper background, sage buttons, dusty-rose details, deep sage dark bands.
+   ========================================================================== */
+:root {
+  --color-bg:        #f5f0e7;  /* cream paper (logo centre, lightened) */
+  --color-surface:   #fffcf6;  /* cards */
+  --color-ink:       #263230;  /* main text, deep sage-black */
+  --color-muted:     #5c6662;  /* secondary text */
+  --color-accent:    #4f6762;  /* buttons, links (logo sage) */
+  --color-accent-ink:#ffffff;  /* text on accent */
+  --color-accent-2:  #9a5f58;  /* secondary accent (fawn dusty rose, deepened) */
+  --color-soft:      #e2d9ca;  /* oat (logo centre) */
+  --color-rose:      #e6c4bd;  /* light dusty rose */
+  --color-deep:      #34443f;  /* dark sections (deep sage) */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 16px;
+}
+
+/* Preview marker (try-before-you-buy) */
+.preview-banner {
+  background: var(--color-deep); color: #e9efe9; text-align: center;
+  font: 500 .88rem/1.4 var(--font-body); padding: .6rem 1rem; letter-spacing: .01em;
+}
+.preview-banner strong { color: var(--color-rose); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .8rem; margin-right: .15rem; }
+
+/* Hero: rich overalls photo, dark sage wash on the text side */
+.hero-img { object-position: 60% 40%; }
+.hero-overlay { background:
+    linear-gradient(90deg, rgba(30,42,39,.86) 0%, rgba(30,42,39,.66) 38%, rgba(30,42,39,.18) 64%, rgba(30,42,39,0) 78%); }
+.hero h1 { max-width: 11ch; line-height: 1.02; }
+.hero-tagline { color: #f1ebe1; max-width: 30ch; }
+.hero-tagline em { display: block; font-style: normal; font: 500 1.9rem/1.2 var(--font-script); color: var(--color-rose); margin-top: .45rem; }
+.eyebrow--light { color: var(--color-rose); }
+@media (max-width: 859px) {
+  .hero-img { object-position: 55% 30%; }
+  .hero-overlay { background: linear-gradient(180deg, rgba(30,42,39,.05) 0%, rgba(30,42,39,.35) 35%, rgba(30,42,39,.86) 62%, rgba(30,42,39,.94) 100%); }
+}
+
+/* tune the template's brown details toward sage + rose */
+.maker-badge { background: var(--color-deep); }
+.maker-badge span { color: var(--color-rose); }
+.story-text p:not(.lead):not(.eyebrow):not(.signature), .steps li, .legal p { color: #3d4845; }
+.join { color: #eef2ee; }
+.join-copy p:not(.eyebrow) { color: #d6e0db; }
+.join .eyebrow--light { color: var(--color-rose); }
+.site-footer { background: #2a3734; color: #d5dfda; }
+.muted-light { color: #a9b8b2; }
+.footer-links a { color: #eef3f0; }
+.footer-legal { color: #9cada6; }
+.footer-legal a { color: #d2ddd8; }
+.footer-links .js-shop { color: var(--color-rose); }
+.testimonials .t-stars { color: #f6dcb4; }
+.shop-modal::backdrop { background: rgba(28, 38, 35, .6); }
+.legal a[href^="mailto:"] { overflow-wrap: anywhere; }
+
+/* keep the full shop name visible on phones too */
+.brand-name .brand-keep { font-style: italic; font-weight: 400; color: var(--color-muted); }
+.site-nav .nav-shop { white-space: nowrap; }
+@media (max-width: 420px) {
+  .header-inner { gap: .6rem; }
+  .brand { gap: .45rem; }
+  .brand-logo { width: 38px; height: 38px; }
+  .brand-name { font-size: 1rem; }
+  .site-nav .nav-shop { padding: .5rem .85rem; font-size: .9rem; }
+}
+@media (max-width: 360px) { .brand-name .brand-keep { display: none; } }
+/* the shop icon is a round badge on a sage square: show it round */
+.brand-logo { border-radius: 50%; object-fit: cover; }
+.modal-avatar, .closing-avatar { object-position: 50% 12%; }
