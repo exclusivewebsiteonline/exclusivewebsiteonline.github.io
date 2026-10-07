@@ -1,0 +1,40 @@
+/* ======================= THEME: Tjitske Kamphuis =======================
+   Pale sky paper with the deep slate navy of the shop's logo and the soft gold of her sunrises.
+   ===================================================================== */
+:root {
+  --color-bg:        #f3f1ec;  /* pale sky paper */
+  --color-surface:   #fbfaf7;  /* cards */
+  --color-ink:       #222a35;  /* main text */
+  --color-muted:     #5d6570;  /* secondary text */
+  --color-accent:    #303a46;  /* slate navy (shop logo) */
+  --color-accent-ink:#ffffff;  /* text on accent */
+  --color-accent-2:  #4f6173;  /* stormy blue-grey */
+  --color-deep:      #262e38;  /* dark sections */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script:  "Caveat", "Segoe Script", cursive;
+  --radius: 14px;
+}
+/* Preview marker (try-before-you-buy) */
+.preview-banner {
+  background: var(--color-deep); color: #eef0f3; text-align: center;
+  font: 500 .88rem/1.4 var(--font-body); padding: .6rem 1rem; letter-spacing: .01em;
+}
+.preview-banner strong { color: #e2c27a; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .8rem; margin-right: .15rem; }
+/* long contact address wraps on narrow phones */
+.legal a[href^="mailto:"] { overflow-wrap: anywhere; }
+/* keep the full name visible on phones too */
+.brand-name .brand-keep { font-style: italic; font-weight: 400; color: var(--color-muted); }
+@media (max-width: 420px) { .brand-name { font-size: 1.05rem; } }
+/* three category cards: fill the row on wide screens */
+@media (min-width: 1000px) { .categories:has(> li:nth-child(3):last-child) { grid-template-columns: repeat(3, 1fr); } }
+/* footer in the slate navy instead of the template's brown */
+.site-footer { background: var(--color-deep); color: #d3d8df; }
+.muted-light { color: #a9b1bb; }
+.footer-links a, .footer-social a { color: #e6eaef; }
+.footer-legal { color: #98a1ac; }
+.footer-legal a { color: #cfd6de; }
+/* her line artwork is busy behind text: a deeper slate overlay keeps the hero text readable */
+.hero-overlay { background: linear-gradient(90deg, rgba(28,34,43,.86) 0%, rgba(28,34,43,.62) 55%, rgba(28,34,43,.25) 100%); }
+@media (max-width: 760px) { .hero-overlay { background: linear-gradient(180deg, rgba(28,34,43,.35) 0%, rgba(28,34,43,.82) 45%, rgba(28,34,43,.9) 100%); } }
+.eyebrow--light { color: #e8cf8f; }
