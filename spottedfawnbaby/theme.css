@@ -69,4 +69,4 @@
 @media (max-width: 360px) { .brand-name .brand-keep { display: none; } }
 /* the shop icon is a round badge on a sage square: show it round */
 .brand-logo { border-radius: 50%; object-fit: cover; }
-.modal-avatar, .closing-avatar { object-position: 50% 12%; }
+.modal-avatar, .closing-avatar { object-position: 50% 0%; }
