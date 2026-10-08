@@ -261,6 +261,26 @@ p { margin: 0 0 1em; }
 .closing .muted { max-width: 46ch; margin-bottom: 1.8rem; }
 .closing-social { margin: 1.4rem 0 0; }
 
+/* ---------- Find me elsewhere (optional; only rendered when config.php elsewhere_links has links) ---------- */
+.section.elsewhere { padding-top: 0; }
+.elsewhere .container { border-top: 1px solid var(--line); padding-top: clamp(2.5rem, 2rem + 3vw, 4rem); }
+.elsewhere-head { margin-bottom: 2rem; }
+.elsewhere-head h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); }
+.elsewhere-list { list-style: none; margin: 0 auto; padding: 0; display: grid; gap: .9rem; max-width: 980px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.elsewhere-link { display: flex; align-items: center; gap: .9rem; min-height: 64px; height: 100%; padding: .85rem 1rem;
+  background: var(--color-surface); border: 1px solid var(--line); border-radius: var(--radius);
+  color: var(--color-ink); text-decoration: none; transition: border-color .2s, transform .2s, box-shadow .2s; }
+.elsewhere-link:hover { border-color: color-mix(in srgb, var(--color-accent) 55%, transparent); box-shadow: var(--shadow); transform: translateY(-1px); }
+.elsewhere-icon { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-accent); }
+.elsewhere-icon svg { width: 22px; height: 22px; }
+.elsewhere-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.35; }
+.elsewhere-text strong { font-weight: 700; font-size: 1rem; overflow-wrap: anywhere; }
+.elsewhere-text span { color: var(--color-muted); font-size: .88rem; }
+.elsewhere-arrow { flex: none; width: 18px; height: 18px; margin-left: auto; color: var(--color-muted); }
+@media (prefers-reduced-motion: reduce) { .elsewhere-link:hover { transform: none; } }
+
 /* ---------- Footer ---------- */
 .site-footer { background: #241b16; color: #d9cbbd; padding: 3rem 0 2.2rem; font-size: .95rem; }
 .footer-inner { display: grid; gap: 1.5rem; }
@@ -272,6 +292,11 @@ p { margin: 0 0 1em; }
 .footer-links a:hover { color: #fff; text-decoration: underline; }
 .footer-legal { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.4rem; margin: 0; color: #8f8174; font-size: .85rem; }
 .footer-legal a { color: #cdbcab; }
+.footer-social { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; grid-column: 1 / -1; }
+.footer-social a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: #efe2d4;
+  border: 1px solid rgba(255,255,255,.16); transition: background .2s, color .2s; }
+.footer-social a:hover { background: rgba(255,255,255,.1); color: #fff; }
+.footer-social svg { width: 20px; height: 20px; }
 
 /* ---------- Plain pages (thank-you fallback, export) ---------- */
 .plain-page { min-height: 100vh; display: grid; place-items: center; padding: 2rem 1.25rem; }
