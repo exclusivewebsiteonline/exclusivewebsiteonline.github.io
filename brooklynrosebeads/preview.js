@@ -3,7 +3,6 @@
    Stands in for subscribe.php by answering main.js's request locally with the same reply the real site gives. */
 (function () {
   'use strict';
-  var OFFER = {"code": "KENDRA10", "label": "10% off your first order"};
   var SENTINEL = '#preview-signup';
   var realFetch = window.fetch;
 
@@ -22,8 +21,7 @@
     try { var b = init && init.body; hp = b && b.get ? String(b.get('website') || '').trim() : ''; } catch (e) {}
     var payload = hp
       ? { ok: true, message: 'Thanks! Check your inbox soon.' }            // honeypot: same as the real server
-      : { ok: true, message: 'You\u2019re in! Here\u2019s your code \u2014 thank you for supporting a small studio.',
-          code: OFFER.code, label: OFFER.label };
+      : { ok: true, message: 'Thank you! You\u2019ll be the first to know about sales and new products.' };
     return new Promise(function (resolve) {
       setTimeout(function () {
         resolve(new Response(JSON.stringify(payload), { status: 200, headers: { 'Content-Type': 'application/json' } }));
