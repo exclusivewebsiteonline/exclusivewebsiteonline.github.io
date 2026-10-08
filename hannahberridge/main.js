@@ -72,16 +72,9 @@
             remember('subscribed');
             var step = form.closest('.modal-step');
             var hideEl = step && step.getAttribute('data-step') === 'form' ? step : form;
-            if (json.code) {
-              // New signups get a short thank-you (the title already says "You're in!"); repeat signups see the server's note.
-              success.querySelector('.js-msg').textContent = /already/i.test(json.message || '') ? json.message : 'Thank you for supporting a small studio.';
-              success.querySelector('.js-code').textContent = json.code;
-            } else {
-              // Honeypot path: thank them, reveal nothing.
-              success.querySelector('.js-msg').textContent = 'Thank you!';
-              var row = success.querySelector('.code-row'); if (row) row.hidden = true;
-              var lbl = success.querySelector('.code-label'); if (lbl) lbl.hidden = true;
-            }
+            // Signup thank-you (2026-10-08 copy). Repeat signups see the server's note.
+            success.querySelector('.js-msg').textContent = /already/i.test(json.message || '')
+              ? json.message : 'Thank you! You\u2019ll be the first to know about sales and new products.';
             hideEl.hidden = true;
             success.hidden = false;
             success.focus();
@@ -95,16 +88,6 @@
   }
   Array.prototype.forEach.call(document.querySelectorAll('form.js-signup'), initForm);
 
-  /* ---------- Copy code buttons ---------- */
-  document.addEventListener('click', function (e) {
-    var copy = e.target.closest && e.target.closest('.js-copy');
-    if (!copy) return;
-    var code = copy.parentNode.querySelector('.js-code').textContent;
-    var done = function () { copy.textContent = 'Copied!'; setTimeout(function () { copy.textContent = 'Copy'; }, 2000); };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(code).then(done, function () {});
-    }
-  });
 
   /* ---------- Shop popup ---------- */
   var modal = document.getElementById('shop-modal');
