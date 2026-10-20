@@ -404,3 +404,9 @@ html.modal-open { overflow: hidden; }
   .t-track { scroll-behavior: auto; }
   .t-dot::before { transition: none; }
 }
+
+/* popup-skip 2026-10-20 */
+.modal-card:focus { outline: none; }
+.modal-skip-top { position: absolute; top: .9rem; left: 1rem; padding: .45rem .3rem; font-size: .9rem; font-weight: 600; color: var(--color-muted); text-decoration: underline; text-underline-offset: .2em; z-index: 1; }
+.modal-skip-top:hover, .modal-skip-top:focus-visible { color: var(--color-ink); }
+.shop-modal .modal-card { padding-top: 3.4rem; }

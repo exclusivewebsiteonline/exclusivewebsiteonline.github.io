@@ -141,12 +141,13 @@
   function openModal(href, opener) {
     lastFocus = opener || document.activeElement;
     skip.href = href;
+    Array.prototype.forEach.call(modal.querySelectorAll('.js-skip-top'), function (a) { a.href = href; });
     cont.href = href;
     document.documentElement.classList.add('modal-open');
     modal.showModal();
     stat('popup');
-    var first = modal.querySelector('[data-step="form"]:not([hidden]) input[type="email"]') || focusables()[0];
-    if (first) first.focus();
+    var card = modal.querySelector('.modal-card'); /* no input autofocus: keeps the phone keyboard closed */
+    if (card) card.focus({ preventScroll: true });
   }
 
   function closeModal() {
