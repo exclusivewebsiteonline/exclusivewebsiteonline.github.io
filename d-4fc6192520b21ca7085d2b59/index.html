@@ -370,10 +370,21 @@ Yeshaya @ Exclusive Website Online</div></details><button type="button" class="o
     var st=b.querySelector('.ok-status');st.className='ok-status error';st.textContent='';
     st.appendChild(el('span','','Not sent. '));
     if(msg)st.appendChild(el('span','why',msg));
+    var rt=el('button','reset','Try again');rt.type='button';rt.addEventListener('click',function(){send(b,f.action,f.note);});st.appendChild(rt);
     var a=el('a','','Email it instead: '+f[CFG.subjectField]);a.href=mailto(f);st.appendChild(a);
     b.querySelectorAll('.obtn').forEach(function(x){x.disabled=false;});
   }
+  var Q=[],busy=false,last=0;
   function send(b,action,note){
+    var st=b.querySelector('.ok-status');st.className='ok-status sending';st.textContent=busy||Q.length?'Queued\u2026':'Sending\u2026';
+    b.querySelectorAll('.obtn').forEach(function(x){x.disabled=true;});
+    Q.push([b,action,note]);pump();
+  }
+  function pump(){
+    if(busy||!Q.length)return;busy=true;var w=Math.max(0,last+4000-Date.now());
+    setTimeout(function(){var j=Q.shift();last=Date.now();send1(j[0],j[1],j[2],function(){busy=false;pump();});},w);
+  }
+  function send1(b,action,note,next){
     var f={};Object.keys(CFG.extra||{}).forEach(function(k){f[k]=CFG.extra[k];});
     f[CFG.subjectField]=SUBJ[action]+': '+b.dataset.shop;
     f.action=action;f.shop=b.dataset.shop;f.stage=b.dataset.stage;f.note=note||'';f.item=(action==='build'?'build':b.dataset.item);
@@ -388,7 +399,8 @@ Yeshaya @ Exclusive Website Online</div></details><button type="button" class="o
         var s={action:action,note:f.note,at:Date.now(),v:b.dataset.v};save(b,s);
         b.querySelectorAll('.obtn').forEach(function(x){x.disabled=false;});showDone(b,s);
       }else{showError(b,f,(res.j&&res.j.message)?String(res.j.message):('Server answered HTTP '+res.status));}
-    }).catch(function(err){clearTimeout(tm);showError(b,f,'Network error'+(err&&err.name==='AbortError'?' (timed out)':'')+'.');});
+      next();
+    }).catch(function(err){clearTimeout(tm);showError(b,f,'Network error'+(err&&err.name==='AbortError'?' (timed out)':'')+'.');next();});
   }
   document.querySelectorAll('.ok').forEach(function(b){
     var s=load(b);if(s)showDone(b,s);
